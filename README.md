@@ -1,4 +1,4 @@
-# broadband
+# Empirical research on broadband
 
 My continuing research on broadband will live in [this repo](https://github.com/willrinehart).
 
