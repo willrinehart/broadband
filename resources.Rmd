@@ -12,22 +12,16 @@ knit: (function(input_file, encoding) {
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Broadband statistics 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+I am beginning a massive project on broadband effects, which will live in this repo.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+First and foremost, be sure to check out Michael Kotrous [repo](https://github.com/michaelkotrous/form477-panels/), which supports his academic work in broadband.
 
-```{r cars}
-summary(cars)
-```
+#### Federal Communications Commission official data
 
-## Including Plots
+* [Raw Form 477 data](https://www.fcc.gov/general/broadband-deployment-data-fcc-form-477)
 
-You can also embed plots, for example:
+* [Internet Access Service Report data](https://www.fcc.gov/internet-access-services-reports)
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+* [List of 40 specialized FCC databases, such as radio call signs and equipment authorization](https://www.fcc.gov/licensing-databases/search-fcc-databases)
