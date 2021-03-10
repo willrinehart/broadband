@@ -16,7 +16,7 @@ Michael Kotrous put all of his data in this [repo](https://github.com/michaelkot
 
 * [Measuring Fixed Broadband Data](https://www.fcc.gov/general/measuring-broadband-america) 
 
-* [Measuring Broadband America Program - Fixed Reports Data and Related Materials ie Whitebox data](https://www.fcc.gov/reports-research/reports/measuring-broadband-america/measuring-broadband-america-program-fixed)
+* [Measuring Broadband America Program - Fixed Reports Data (Whitebox data)](https://www.fcc.gov/reports-research/reports/measuring-broadband-america/measuring-broadband-america-program-fixed)
 
 * [IAD Data & Statistical Reports](https://www.fcc.gov/economics-analytics/industry-analysis-division/iad-data-statistical-reports) 
 
