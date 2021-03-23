@@ -2,7 +2,7 @@
 
 My continuing research on broadband will live in [this repo](https://github.com/willrinehart). Notebooks in this series:
 
-[Broadband adoption and use analysis](https://github.com/willrinehart/broadband/blob/main/simple_analysis.md) 
+* [Broadband adoption and use analysis](https://github.com/willrinehart/broadband/blob/main/simple_analysis.md) 
 
 #### Academic Research
 
