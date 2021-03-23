@@ -1,11 +1,4 @@
----
-title: "Broadband policy 2021"
-output: 
-  html_document:
-    keep_md: true
----
-
-
+# Broadband policy 2021"
 
 This is all of the backend code for this paper. 
 
