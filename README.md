@@ -1,6 +1,8 @@
 # Empirical research on broadband
 
-My continuing research on broadband will live in [this repo](https://github.com/willrinehart).
+My continuing research on broadband will live in [this repo](https://github.com/willrinehart). Some important notebooks in this series:
+
+[Broadband adoption and use analysis](https://github.com/willrinehart/broadband/blob/main/simple_analysis.md) 
 
 #### Academic Research
 
