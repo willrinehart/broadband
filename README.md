@@ -1,6 +1,6 @@
 # Empirical research on broadband
 
-My continuing research on broadband will live in [this repo](https://github.com/willrinehart). Notebooks in this series:
+My continuing research on broadband will live in [this repo](https://github.com/willrinehart). 
 
 * [Broadband adoption and use analysis](https://github.com/willrinehart/broadband/blob/main/simple_analysis.md) 
 
@@ -10,7 +10,7 @@ My continuing research on broadband will live in [this repo](https://github.com/
 
 * [Raw Form 477 data](https://www.fcc.gov/general/broadband-deployment-data-fcc-form-477)
 
-* [Internet Access Service Report data](https://www.fcc.gov/internet-access-services-reports)
+* [Internet Access Service Report data](https://www.fcc.gov/internet-access-services-reports) - Data on Internet access connections in the United States as collected by FCC Form 477 twice a year. 
 
 * [List of 40 specialized FCC databases, such as radio call signs and equipment authorization](https://www.fcc.gov/licensing-databases/search-fcc-databases)
 
