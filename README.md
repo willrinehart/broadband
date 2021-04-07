@@ -4,9 +4,7 @@ My continuing research on broadband will live in [this repo](https://github.com/
 
 * [Broadband adoption and use analysis](https://github.com/willrinehart/broadband/blob/main/simple_analysis.md) 
 
-#### Academic Research
-
-Michael Kotrous put all of his data in this [repo](https://github.com/michaelkotrous/form477-panels/), which supports his academic work in broadband.
+Michael Kotrous put all of his data in this [repo](https://github.com/michaelkotrous/form477-panels/), which supports his academic work in broadband. *Highly suggested*.
 
 #### Official data from the FCC and the NTIA
 
@@ -23,3 +21,7 @@ Michael Kotrous put all of his data in this [repo](https://github.com/michaelkot
 * [IAD Data & Statistical Reports](https://www.fcc.gov/economics-analytics/industry-analysis-division/iad-data-statistical-reports) 
 
 * [Digital Nation Data Explorer](https://www.ntia.doc.gov/data/digital-nation-data-explorer) include raw data for the Internet and Computer Use Survey 
+
+### Other resources
+
+* [Reports from the Rural Electrification Administration](https://catalog.hathitrust.org/Record/003925987)
