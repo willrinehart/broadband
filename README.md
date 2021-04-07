@@ -4,7 +4,7 @@ My continuing research on broadband will live in [this repo](https://github.com/
 
 * [Broadband adoption and use analysis](https://github.com/willrinehart/broadband/blob/main/simple_analysis.md) 
 
-Michael Kotrous put all of his data in this [repo](https://github.com/michaelkotrous/form477-panels/), which supports his academic work in broadband. *Highly suggested*.
+* Michael Kotrous put all of his data in this [repo](https://github.com/michaelkotrous/form477-panels/), which supports his academic work in broadband. *Highly suggested*.
 
 #### Official data from the FCC and the NTIA
 
