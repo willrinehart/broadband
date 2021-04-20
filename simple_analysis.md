@@ -1,4 +1,11 @@
-# Broadband policy 2021
+---
+title: "Broadband policy 2021"
+output: 
+  html_document:
+    keep_md: true
+---
+
+
 
 This is all of the backend code for this paper. 
 
@@ -357,7 +364,7 @@ unconnected_connected_long
 
 ### Who are the unconnected? 
 
-A couple of important stats right up top. There are 26216669 households without Internet at home. In contrast, there are 104069680 households with Internet at home for a total of 130286349 households. 
+A couple of important stats right up top. There are 26,216,669 households without Internet at home. In contrast, there are 104,069,680 households with Internet at home for a total of 130,286,349 households. 
 
 
 ```r
@@ -399,7 +406,7 @@ pie(unconnected_connected_long_income$noInternetAtHome, unconnected_connected_lo
 
 ![](simple_analysis_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
-Now let's look at income.
+Next, education.
 
 
 
@@ -455,7 +462,7 @@ pie(unconnected_connected_long_race$noInternetAtHome, unconnected_connected_long
 ![](simple_analysis_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 
-Again, there are 26216669 households without Internet at home. In contrast, there are 104069680 households with Internet at home for a total of 130286349 households. Let's compare percentages to see which demographics skew the profile. In other words, given what we know about the United States, which factors deviate from the norm?  
+Again, there are 26,216,669 households without Internet at home. In contrast, there are 104,069,680 households with Internet at home for a total of 130,286,349 households. Let's compare percentages to see which demographics skew the profile. In other words, given what we know about the United States, which factors deviate from the norm?  
 
 
 
@@ -828,17 +835,389 @@ formattable(unconnected_connected_long_demos)
 </tbody>
 </table>
 
-
 Let's take a look at the states
-
-
 
 
 ```r
 unconnected_connected_long_state <- unconnected_connected_long[71:172, ] %>%
   filter(str_detect(variable, "Count")) %>%
-  na.omit(.) 
+  na.omit(.) %>% 
+  mutate(., percent = (noInternetAtHome/isHouseholder) * 100)
+
+formattable(unconnected_connected_long_state)
 ```
+
+
+<table class="table table-condensed">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> variable </th>
+   <th style="text-align:right;"> internetAtHome </th>
+   <th style="text-align:right;"> isHouseholder </th>
+   <th style="text-align:right;"> noInternetAtHome </th>
+   <th style="text-align:right;"> percent </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> ALCount </td>
+   <td style="text-align:right;"> 1654253 </td>
+   <td style="text-align:right;"> 2057823 </td>
+   <td style="text-align:right;"> 403570 </td>
+   <td style="text-align:right;"> 19.61150 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> AKCount </td>
+   <td style="text-align:right;"> 217723 </td>
+   <td style="text-align:right;"> 267631 </td>
+   <td style="text-align:right;"> 49908 </td>
+   <td style="text-align:right;"> 18.64806 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> AZCount </td>
+   <td style="text-align:right;"> 2347790 </td>
+   <td style="text-align:right;"> 2810542 </td>
+   <td style="text-align:right;"> 462752 </td>
+   <td style="text-align:right;"> 16.46487 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> ARCount </td>
+   <td style="text-align:right;"> 1021040 </td>
+   <td style="text-align:right;"> 1275479 </td>
+   <td style="text-align:right;"> 254438 </td>
+   <td style="text-align:right;"> 19.94843 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> CACount </td>
+   <td style="text-align:right;"> 11378020 </td>
+   <td style="text-align:right;"> 14235012 </td>
+   <td style="text-align:right;"> 2856992 </td>
+   <td style="text-align:right;"> 20.07018 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> COCount </td>
+   <td style="text-align:right;"> 2078052 </td>
+   <td style="text-align:right;"> 2366826 </td>
+   <td style="text-align:right;"> 288774 </td>
+   <td style="text-align:right;"> 12.20090 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> CTCount </td>
+   <td style="text-align:right;"> 1142445 </td>
+   <td style="text-align:right;"> 1449059 </td>
+   <td style="text-align:right;"> 306614 </td>
+   <td style="text-align:right;"> 21.15952 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> DECount </td>
+   <td style="text-align:right;"> 307748 </td>
+   <td style="text-align:right;"> 387842 </td>
+   <td style="text-align:right;"> 80094 </td>
+   <td style="text-align:right;"> 20.65119 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> DCCount </td>
+   <td style="text-align:right;"> 293100 </td>
+   <td style="text-align:right;"> 343485 </td>
+   <td style="text-align:right;"> 50385 </td>
+   <td style="text-align:right;"> 14.66876 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> FLCount </td>
+   <td style="text-align:right;"> 7172671 </td>
+   <td style="text-align:right;"> 9176306 </td>
+   <td style="text-align:right;"> 2003635 </td>
+   <td style="text-align:right;"> 21.83488 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> GACount </td>
+   <td style="text-align:right;"> 3318541 </td>
+   <td style="text-align:right;"> 4237325 </td>
+   <td style="text-align:right;"> 918784 </td>
+   <td style="text-align:right;"> 21.68311 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> HICount </td>
+   <td style="text-align:right;"> 431593 </td>
+   <td style="text-align:right;"> 496373 </td>
+   <td style="text-align:right;"> 64780 </td>
+   <td style="text-align:right;"> 13.05067 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> IDCount </td>
+   <td style="text-align:right;"> 585159 </td>
+   <td style="text-align:right;"> 696205 </td>
+   <td style="text-align:right;"> 111046 </td>
+   <td style="text-align:right;"> 15.95019 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> ILCount </td>
+   <td style="text-align:right;"> 4193312 </td>
+   <td style="text-align:right;"> 5000939 </td>
+   <td style="text-align:right;"> 807627 </td>
+   <td style="text-align:right;"> 16.14951 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> INCount </td>
+   <td style="text-align:right;"> 2164673 </td>
+   <td style="text-align:right;"> 2683353 </td>
+   <td style="text-align:right;"> 518680 </td>
+   <td style="text-align:right;"> 19.32955 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> IACount </td>
+   <td style="text-align:right;"> 1071727 </td>
+   <td style="text-align:right;"> 1311190 </td>
+   <td style="text-align:right;"> 239463 </td>
+   <td style="text-align:right;"> 18.26303 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> KSCount </td>
+   <td style="text-align:right;"> 936010 </td>
+   <td style="text-align:right;"> 1158139 </td>
+   <td style="text-align:right;"> 222129 </td>
+   <td style="text-align:right;"> 19.17982 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> KYCount </td>
+   <td style="text-align:right;"> 1460989 </td>
+   <td style="text-align:right;"> 1918049 </td>
+   <td style="text-align:right;"> 457059 </td>
+   <td style="text-align:right;"> 23.82937 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> LACount </td>
+   <td style="text-align:right;"> 1433929 </td>
+   <td style="text-align:right;"> 1894451 </td>
+   <td style="text-align:right;"> 460523 </td>
+   <td style="text-align:right;"> 24.30905 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> MECount </td>
+   <td style="text-align:right;"> 471867 </td>
+   <td style="text-align:right;"> 589618 </td>
+   <td style="text-align:right;"> 117751 </td>
+   <td style="text-align:right;"> 19.97073 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> MDCount </td>
+   <td style="text-align:right;"> 1967264 </td>
+   <td style="text-align:right;"> 2291594 </td>
+   <td style="text-align:right;"> 324330 </td>
+   <td style="text-align:right;"> 14.15303 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> MACount </td>
+   <td style="text-align:right;"> 2293912 </td>
+   <td style="text-align:right;"> 2888407 </td>
+   <td style="text-align:right;"> 594496 </td>
+   <td style="text-align:right;"> 20.58214 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> MICount </td>
+   <td style="text-align:right;"> 3338786 </td>
+   <td style="text-align:right;"> 4144812 </td>
+   <td style="text-align:right;"> 806026 </td>
+   <td style="text-align:right;"> 19.44662 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> MNCount </td>
+   <td style="text-align:right;"> 1952164 </td>
+   <td style="text-align:right;"> 2249647 </td>
+   <td style="text-align:right;"> 297483 </td>
+   <td style="text-align:right;"> 13.22354 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> MSCount </td>
+   <td style="text-align:right;"> 894324 </td>
+   <td style="text-align:right;"> 1184106 </td>
+   <td style="text-align:right;"> 289782 </td>
+   <td style="text-align:right;"> 24.47264 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> MOCount </td>
+   <td style="text-align:right;"> 1936168 </td>
+   <td style="text-align:right;"> 2415518 </td>
+   <td style="text-align:right;"> 479350 </td>
+   <td style="text-align:right;"> 19.84460 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> MTCount </td>
+   <td style="text-align:right;"> 364997 </td>
+   <td style="text-align:right;"> 454933 </td>
+   <td style="text-align:right;"> 89936 </td>
+   <td style="text-align:right;"> 19.76906 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NECount </td>
+   <td style="text-align:right;"> 649097 </td>
+   <td style="text-align:right;"> 811139 </td>
+   <td style="text-align:right;"> 162042 </td>
+   <td style="text-align:right;"> 19.97709 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NVCount </td>
+   <td style="text-align:right;"> 992671 </td>
+   <td style="text-align:right;"> 1234656 </td>
+   <td style="text-align:right;"> 241985 </td>
+   <td style="text-align:right;"> 19.59939 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NHCount </td>
+   <td style="text-align:right;"> 485085 </td>
+   <td style="text-align:right;"> 557845 </td>
+   <td style="text-align:right;"> 72760 </td>
+   <td style="text-align:right;"> 13.04305 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NJCount </td>
+   <td style="text-align:right;"> 2735578 </td>
+   <td style="text-align:right;"> 3406177 </td>
+   <td style="text-align:right;"> 670600 </td>
+   <td style="text-align:right;"> 19.68776 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NMCount </td>
+   <td style="text-align:right;"> 682725 </td>
+   <td style="text-align:right;"> 859635 </td>
+   <td style="text-align:right;"> 176910 </td>
+   <td style="text-align:right;"> 20.57966 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NYCount </td>
+   <td style="text-align:right;"> 6020899 </td>
+   <td style="text-align:right;"> 7845407 </td>
+   <td style="text-align:right;"> 1824508 </td>
+   <td style="text-align:right;"> 23.25575 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NCCount </td>
+   <td style="text-align:right;"> 3212782 </td>
+   <td style="text-align:right;"> 4336469 </td>
+   <td style="text-align:right;"> 1123687 </td>
+   <td style="text-align:right;"> 25.91249 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NDCount </td>
+   <td style="text-align:right;"> 256269 </td>
+   <td style="text-align:right;"> 322167 </td>
+   <td style="text-align:right;"> 65898 </td>
+   <td style="text-align:right;"> 20.45461 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> OHCount </td>
+   <td style="text-align:right;"> 3782398 </td>
+   <td style="text-align:right;"> 4844692 </td>
+   <td style="text-align:right;"> 1062294 </td>
+   <td style="text-align:right;"> 21.92697 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> OKCount </td>
+   <td style="text-align:right;"> 1293391 </td>
+   <td style="text-align:right;"> 1602134 </td>
+   <td style="text-align:right;"> 308743 </td>
+   <td style="text-align:right;"> 19.27074 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> ORCount </td>
+   <td style="text-align:right;"> 1492605 </td>
+   <td style="text-align:right;"> 1732476 </td>
+   <td style="text-align:right;"> 239872 </td>
+   <td style="text-align:right;"> 13.84562 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> PACount </td>
+   <td style="text-align:right;"> 3820182 </td>
+   <td style="text-align:right;"> 5004797 </td>
+   <td style="text-align:right;"> 1184615 </td>
+   <td style="text-align:right;"> 23.66959 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> RICount </td>
+   <td style="text-align:right;"> 337530 </td>
+   <td style="text-align:right;"> 411319 </td>
+   <td style="text-align:right;"> 73789 </td>
+   <td style="text-align:right;"> 17.93960 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> SCCount </td>
+   <td style="text-align:right;"> 1812815 </td>
+   <td style="text-align:right;"> 2214685 </td>
+   <td style="text-align:right;"> 401871 </td>
+   <td style="text-align:right;"> 18.14574 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> SDCount </td>
+   <td style="text-align:right;"> 293903 </td>
+   <td style="text-align:right;"> 367110 </td>
+   <td style="text-align:right;"> 73206 </td>
+   <td style="text-align:right;"> 19.94116 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> TNCount </td>
+   <td style="text-align:right;"> 2071353 </td>
+   <td style="text-align:right;"> 2732458 </td>
+   <td style="text-align:right;"> 661105 </td>
+   <td style="text-align:right;"> 24.19452 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> TXCount </td>
+   <td style="text-align:right;"> 8524311 </td>
+   <td style="text-align:right;"> 10750119 </td>
+   <td style="text-align:right;"> 2225809 </td>
+   <td style="text-align:right;"> 20.70497 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> UTCount </td>
+   <td style="text-align:right;"> 953391 </td>
+   <td style="text-align:right;"> 1088083 </td>
+   <td style="text-align:right;"> 134692 </td>
+   <td style="text-align:right;"> 12.37884 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> VTCount </td>
+   <td style="text-align:right;"> 223223 </td>
+   <td style="text-align:right;"> 276999 </td>
+   <td style="text-align:right;"> 53776 </td>
+   <td style="text-align:right;"> 19.41379 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> VACount </td>
+   <td style="text-align:right;"> 2868490 </td>
+   <td style="text-align:right;"> 3456537 </td>
+   <td style="text-align:right;"> 588047 </td>
+   <td style="text-align:right;"> 17.01261 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> WACount </td>
+   <td style="text-align:right;"> 2471797 </td>
+   <td style="text-align:right;"> 3058661 </td>
+   <td style="text-align:right;"> 586864 </td>
+   <td style="text-align:right;"> 19.18696 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> WVCount </td>
+   <td style="text-align:right;"> 563190 </td>
+   <td style="text-align:right;"> 743497 </td>
+   <td style="text-align:right;"> 180307 </td>
+   <td style="text-align:right;"> 24.25121 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> WICount </td>
+   <td style="text-align:right;"> 1916237 </td>
+   <td style="text-align:right;"> 2406328 </td>
+   <td style="text-align:right;"> 490091 </td>
+   <td style="text-align:right;"> 20.36676 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> WYCount </td>
+   <td style="text-align:right;"> 181498 </td>
+   <td style="text-align:right;"> 238290 </td>
+   <td style="text-align:right;"> 56792 </td>
+   <td style="text-align:right;"> 23.83314 </td>
+  </tr>
+</tbody>
+</table>
 
 ### Whitebox Data
 
