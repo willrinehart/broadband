@@ -7,28 +7,49 @@ knitr::opts_chunk$set(echo = TRUE)
 library(easypackages)
 libraries("readxl","ggplot2","stringr", "rlist", "data.table", "DBI", "RSQLite",  
           "stargazer", "Hmisc","magrittr","formattable", "RPostgreSQL", "dplyr", 
-          "tidyverse", "dbplyr")
+          "tidyverse", "dbplyr", "zipcodeR")
 options(scipen=999)
 
 ```
 
-## Emergency Broadband Benefit analysis
-
-Let's dig into the Emergency Broadband Benefit data, located here: https://www.usac.org/about/emergency-broadband-benefit-program/emergency-broadband-benefit-program-enrollments-and-claims-tracker/additional-ebb-program-data/. 
+Let's dig into the Emergency Broadband Benefit data, [located here](https://www.usac.org/about/emergency-broadband-benefit-program/emergency-broadband-benefit-program-enrollments-and-claims-tracker/additional-ebb-program-data/). 
 
 
+```{r }
 
+ebb_data <- read_xlsx("EBB_Enrollment_10_1_zip5.xlsx")
 
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
+We need to convert the data from zip code to Census tract because it is so much easier. 
 
-You can also embed plots, for example:
+```{r }
+
+download_zip_data(force = FALSE)
+
+```
+
+
+
+
+
+
+
+https://www.fcc.gov/reports-research/maps/tract-level-residential-fixed-connections-dec-2018/
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+
+The FCC also provides the [Residential Fixed Internet Access Service Connections per 1000 Households by Census Tract](https://www.fcc.gov/reports-research/maps/tract-level-residential-fixed-connections-dec-2018/). 
+
+```{r }
+
+service_connections <- read.csv("tract_map_dec_2018.csv")
+
+```
